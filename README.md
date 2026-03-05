@@ -1,4 +1,4 @@
-# Exam Learning Server API 說明文件 (繁體中文)
+# Exam Learning Server API 說明文件
 
 本伺服器提供基於強化學習 (Reinforcement Learning) 的考試預測與訓練介面。
 
@@ -35,7 +35,7 @@
     "questions": [
       {
         "question": "題目描述 1",
-        "options": ["選項 A", "選項 B", "選項 C", "選項 D"]
+        "options": ["選項 A", "選項 B", "選項 C", "選項 D"] // 也可以是 [{"id": 1, "text": "A"}, ...] 或 {"A": "選項 A", ...}
       },
       ...
     ]
@@ -47,7 +47,7 @@
     "questions": [
       {
         "question": "題目描述 1",
-        "options": ["選項 A", "選項 B", "選項 C", "選項 D"],
+        "options": ["選項 A", "選項 B", "選項 C", "選項 D"], // 保持與請求格式一致
         "chosen_index": 2
       },
       ...

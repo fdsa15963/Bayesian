@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any, Union
 from brain import ExamLearner
 import uvicorn
 
@@ -21,17 +21,17 @@ async def read_root():
                 "method": "POST",
                 "desc": "Get predictions",
                 "request": {
-                    "questions": [{"question": "string", "options": ["string"]}]
+                    "questions": [{"question": "string", "options": ["any"]}]
                 },
                 "response": {
-                    "questions": [{"question": "string", "options": ["string"], "chosen_index": "int"}]
+                    "questions": [{"question": "string", "options": ["any"], "chosen_index": "int"}]
                 }
             },
             "/update": {
                 "method": "POST",
                 "desc": "Update weights",
                 "request": {
-                    "questions": [{"question": "string", "options": ["string"], "chosen_index": "int"}],
+                    "questions": [{"question": "string", "options": ["any"], "chosen_index": "int"}],
                     "score": "float",
                     "total_score": "int"
                 },
@@ -42,14 +42,14 @@ async def read_root():
 
 class Question(BaseModel):
     question: str
-    options: List[str]
+    options: Union[List[Any], Dict[str, Any]]
 
 class PredictRequest(BaseModel):
     questions: List[Question]
 
 class QuestionWithChoice(BaseModel):
     question: str
-    options: List[str]
+    options: Union[List[Any], Dict[str, Any]]
     chosen_index: int
 
 class UpdateRequest(BaseModel):
