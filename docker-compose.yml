@@ -7,5 +7,5 @@ services:
     volumes:
       - .:/app
       # 確保持久化數據映射
-      - ./brain_data.json:/app/brain_data.json
+      - ./data:/app/data
     restart: always

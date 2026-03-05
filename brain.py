@@ -4,7 +4,7 @@ import os
 from typing import List, Dict, Tuple
 
 class ExamLearner:
-    def __init__(self, storage_path: str = "brain_data.json"):
+    def __init__(self, storage_path: str = "data/brain_data.json"):
         self.storage_path = storage_path
         self.lr = 0.1  # 學習率調整，配合歸一化邏輯
         self.temperature = 1.0  # 初始溫度，用於控制探索比例
