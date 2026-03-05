@@ -1,0 +1,32 @@
+# Python 相關
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 虛擬環境
+venv/
+.venv/
+env/
+ENV/
+
+# 資料/狀態檔案 (避免頻繁更動造成 Git 雜亂)
+# 如果 brain_data.json 是模型權重且需要跟著程式走，可以取消註解
+brain_data.json
+
+# 環境變數與秘密金鑰
+.env
+*.key
+*.pem
+
+# IDE 相關
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 日誌與測試
+*.log
+.pytest_cache/
+.coverage
+htmlcov/

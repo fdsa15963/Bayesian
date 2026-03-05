@@ -1,0 +1,11 @@
+services:
+  exam-server:
+    build: .
+    image: exam-server:v1.0
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      # 確保持久化數據映射
+      - ./brain_data.json:/app/brain_data.json
+    restart: always

@@ -1,0 +1,48 @@
+# Python 相關
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 環境變數與金鑰
+.env
+.flaskenv
+*.key
+*.pem
+
+# Git 相關 (防止 Git 資訊進到 Docker)
+.git/
+.gitignore
+.gitattributes
+
+# Docker 相關
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# 測試與 IDE
+.pytest_cache/
+.coverage
+htmlcov/
+.vscode/
+.idea/
+*.log
